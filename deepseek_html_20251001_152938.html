@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kahf Facial Wash - Perawatan Wajah Pria Terbaik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #1a3c34;
+            --secondary: #2d6a4f;
+            --accent: #40916c;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --text: #333333;
+            --price: #e63946;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #d8f3dc;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 60, 52, 0.8), rgba(26, 60, 52, 0.9)), url('https://images.unsplash.com/photo-1601049676867-ffb9b4e61f7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(64, 145, 108, 0.4);
+        }
+        
+        .cta-button:hover {
+            background-color: #2d6a4f;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(64, 145, 108, 0.6);
+        }
+        
+        /* Product Section */
+        .product-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary);
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        .product-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.5s;
+        }
+        
+        .product-image img:hover {
+            transform: scale(1.03);
+        }
+        
+        .product-details {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+        }
+        
+        .product-details h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .product-description {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .price {
+            font-size: 2rem;
+            color: var(--price);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.2rem;
+            margin-left: 10px;
+        }
+        
+        .features {
+            margin: 25px 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .feature-item i {
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            flex: 2;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            flex: 1;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .benefit-icon {
+            background-color: #e8f5e9;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--accent);
+            font-size: 1.8rem;
+        }
+        
+        .benefit-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .testimonial-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 350px;
+            box-shadow: var(--shadow);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .author-info h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-question {
+            background: white;
+            padding: 18px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .faq-answer {
+            background: white;
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.7);
+        }
+        
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 70px;
+            background: var(--primary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary), #0f2921);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .whatsapp-tooltip {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <h1>Kahf Store</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="#produk">Produk</a>
+                    <a href="#manfaat">Manfaat</a>
+                    <a href="#testimoni">Testimoni</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Wajah Bersih & Segar Setiap Hari</h2>
+            <p>Kahf Facial Wash dengan formula HydroBalance dan Pure Cleanse, khusus untuk kulit pria Indonesia. Atasi masalah minyak berlebih dan jerawat dengan perawatan yang tepat.</p>
+            <a href="#produk" class="cta-button">BELI SEKARANG</a>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section class="product-section" id="produk">
+        <div class="container">
+            <div class="section-title">
+                <h2>Kahf Oil & Acne Care Face Wash</h2>
+                <p>Solusi perawatan wajah pria dengan bahan alami dan teknologi modern</p>
+            </div>
+            <div class="product-container">
+                <div class="product-image">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98w-lr8i1eqk6o9c39" alt="Kahf Facial Wash">
+                </div>
+                <div class="product-details">
+                    <h3>Kahf Oil & Acne Care Face Wash 100ml</h3>
+                    <p class="product-description">Sabun wajah pria dengan kandungan HydroBalance dan Pure Cleanse yang diformulasikan khusus untuk kulit berminyak dan berjerawat. Membersihkan wajah secara mendalam tanpa membuat kulit kering.</p>
+                    
+                    <div class="price">Rp 45.000 <span class="original-price">Rp 55.000</span></div>
+                    
+                    <div class="features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>100% Original & Bergaransi</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Sudah terdaftar BPOM</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Bersertifikat Halal</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Cocok untuk kulit sensitif</span>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <a href="https://wa.me/6287822347430?text=Halo%2C%20saya%20mau%20pesan%20Kahf%20Facial%20Wash" class="btn btn-primary">
+                            <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                        </a>
+                        <a href="#testimoni" class="btn btn-secondary">
+                            <i class="fas fa-comment"></i> Lihat Testimoni
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="manfaat">
+        <div class="container">
+            <div class="section-title">
+                <h2>Manfaat Kahf Facial Wash</h2>
+                <p>Rasakan perubahan pada kulit wajah Anda setelah penggunaan rutin</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Kurangi Minyak Berlebih</h3>
+                    <p>Formula khusus yang mengontrol produksi minyak berlebih di wajah sepanjang hari.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bacteria"></i>
+                    </div>
+                    <h3>Atasi Jerawat</h3>
+                    <p>Membersihkan pori-pori secara mendalam dan mencegah timbulnya jerawat baru.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Bahan Alami</h3>
+                    <p>Mengandung ekstrak tumbuhan alami yang aman dan efektif untuk perawatan kulit.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>Kulit Lebih Segar</h3>
+                    <p>Memberikan sensasi segar dan bersih setelah setiap penggunaan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimoni">
+        <div class="container">
+            <div class="section-title">
+                <h2>Apa Kata Pelanggan Kami?</h2>
+                <p>Testimoni nyata dari pengguna Kahf Facial Wash</p>
+            </div>
+            <div class="testimonial-container">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Wajah saya yang berminyak jadi lebih terkontrol setelah pakai Kahf. Jerawat juga berkurang drastis. Recommended banget!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Andi Pratama</h4>
+                            <p>Karyawan, 26 tahun</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Aromanya segar dan teksturnya lembut. Kulit saya yang sensitif tidak iritasi sama sekali. Pokoknya worth it!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div class="author-info">
+                            <h4>Rizky Maulana</h4>
+                            <p>Mahasiswa, 22 tahun</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Produk original dengan harga terjangkau. Pengiriman cepat dan packing aman. Sudah langganan di sini."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">D</div>
+                        <div class="author-info">
+                            <h4>Dedi Setiawan</h4>
+                            <p>Wiraswasta, 30 tahun</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pertanyaan Umum</h2>
+                <p>Informasi lengkap seputar produk Kahf Facial Wash</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Apakah produk ini original?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya, kami adalah official reseller Kahf dengan produk 100% original dan bergaransi. Setiap produk memiliki kode keaslian yang dapat diverifikasi.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Bagaimana cara pemakaiannya?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Basahi wajah dengan air, ambil sedikit facial wash (sekitar kacang polong), pijat lembut di wajah selama 30-60 detik, lalu bilas dengan air bersih. Gunakan 2 kali sehari (pagi dan malam) untuk hasil optimal.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Apakah cocok untuk kulit sensitif?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya, Kahf Facial Wash memiliki formula yang lembut dan telah teruji aman untuk kulit sensitif. Tidak mengandung alkohol, paraben, dan bahan kimia berbahaya lainnya.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Berapa lama hasilnya terlihat?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Perubahan dapat dirasakan dalam 1-2 minggu penggunaan rutin. Untuk hasil maksimal, disarankan menggunakan secara konsisten selama 4 minggu.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Bagaimana cara pembelian dan pengiriman?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Pembelian dapat dilakukan melalui WhatsApp kami. Pengiriman dilakukan via JNE, J&T, atau GoSend dengan estimasi 1-3 hari tergantung lokasi. Gratis ongkir untuk pembelian di atas Rp 100.000.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/6287822347430?text=Halo%2C%20saya%20mau%20pesan%20Kahf%20Facial%20Wash" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <div class="whatsapp-tooltip">Hubungi Kami: +62 878-2234-7430</div>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Kahf Store</h3>
+                    <p>Official Reseller produk perawatan pria Kahf. Menyediakan produk original dengan kualitas terbaik dan harga terjangkau.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Produk Kami</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Facial Wash</a></li>
+                        <li><a href="#">Face Toner</a></li>
+                        <li><a href="#">Moisturizer</a></li>
+                        <li><a href="#">Sunscreen</a></li>
+                        <li><a href="#">Body Wash</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Bantuan</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Cara Pemesanan</a></li>
+                        <li><a href="#">Pembayaran</a></li>
+                        <li><a href="#">Pengiriman</a></li>
+                        <li><a href="#">Garansi Produk</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak Kami</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +62 878-2234-7430</li>
+                        <li><i class="fas fa-envelope"></i> info@kahfstore.id</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Kahf Store. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

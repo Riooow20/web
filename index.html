@@ -86,35 +86,67 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(26, 60, 52, 0.8), rgba(26, 60, 52, 0.9)), url('https://images.unsplash.com/photo-1601049676867-ffb9b4e61f7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, rgba(26, 60, 52, 0.9), rgba(45, 106, 79, 0.8));
             color: white;
-            padding: 80px 0;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-text {
+            flex: 1;
+            padding: 20px 0;
+        }
+        
+        .hero-image {
+            flex: 1;
             text-align: center;
+            position: relative;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+            transition: transform 0.5s ease;
+        }
+        
+        .hero-image img:hover {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.05);
         }
         
         .hero h2 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
         }
         
         .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
         }
         
         .cta-button {
             display: inline-block;
             background-color: var(--accent);
             color: white;
-            padding: 14px 32px;
+            padding: 16px 35px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(64, 145, 108, 0.4);
         }
@@ -123,6 +155,16 @@
             background-color: #2d6a4f;
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(64, 145, 108, 0.6);
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
         }
         
         /* Product Section */
@@ -160,19 +202,47 @@
             flex: 1;
             min-width: 300px;
             max-width: 500px;
-            text-align: center;
         }
         
-        .product-image img {
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .main-image {
             width: 100%;
-            max-width: 400px;
             border-radius: 10px;
             box-shadow: var(--shadow);
             transition: transform 0.5s;
+            cursor: pointer;
         }
         
-        .product-image img:hover {
-            transform: scale(1.03);
+        .main-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .thumbnail-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .thumbnail:hover, .thumbnail.active {
+            opacity: 1;
+            border-color: var(--accent);
+            transform: scale(1.05);
         }
         
         .product-details {
@@ -550,8 +620,17 @@
                 gap: 15px;
             }
             
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
             .hero h2 {
                 font-size: 2.2rem;
+            }
+            
+            .hero-image img {
+                max-height: 300px;
             }
             
             .action-buttons {
@@ -560,6 +639,10 @@
             
             .whatsapp-tooltip {
                 display: none;
+            }
+            
+            .thumbnail-container {
+                flex-wrap: wrap;
             }
         }
     </style>
@@ -570,7 +653,8 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    v<img src="logo.png" alt="Logo kahf store" class="h-8 w-8 rounded-full"
+                    <!-- Logo Kahf -->
+                    <img src="logo.png" alt="Kahf Logo">
                     <h1>Kahf Store</h1>
                 </div>
                 <div class="nav-links">
@@ -586,9 +670,21 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h2>Wajah Bersih & Segar Setiap Hari</h2>
-            <p>Kahf Facial Wash dengan formula HydroBalance dan Pure Cleanse, khusus untuk kulit pria Indonesia. Atasi masalah minyak berlebih dan jerawat dengan perawatan yang tepat.</p>
-            <a href="#produk" class="cta-button">BELI SEKARANG</a>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-star"></i> Produk Terlaris 2023
+                    </div>
+                    <h2>Wajah Bersih & Segar Setiap Hari dengan Kahf</h2>
+                    <p>Formula HydroBalance dan Pure Cleanse khusus untuk kulit pria Indonesia. Atasi masalah minyak berlebih dan jerawat dengan perawatan yang tepat.</p>
+                    <a href="#produk" class="cta-button">
+                        <i class="fas fa-shopping-cart"></i> BELI SEKARANG
+                    </a>
+                </div>
+                <div class="hero-image">
+                    <img src="produk.png" alt="Kahf Facial Wash">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -601,7 +697,14 @@
             </div>
             <div class="product-container">
                 <div class="product-image">
-                    <img src="produk.png" alt="Kahf Facial Wash">
+                    <div class="product-gallery">
+                        <img id="mainImage" src="https://down-id.img.susercontent.com/file/id-11134207-7r98w-lr8i1eqk6o9c39" alt="Kahf Facial Wash" class="main-image">
+                        <div class="thumbnail-container">
+                            <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98w-lr8i1eqk6o9c39" alt="Kahf Facial Wash - Tampilan Depan" class="thumbnail active" data-image="https://down-id.img.susercontent.com/file/id-11134207-7r98w-lr8i1eqk6o9c39">
+                            <img src="https://images.tokopedia.net/img/cache/500-square/VqbcmM/2021/11/5/6d8d5c1a-6b6a-4d6c-9d4c-9e3c0b1a4b5d.jpg" alt="Kahf Facial Wash - Tampilan Samping" class="thumbnail" data-image="https://images.tokopedia.net/img/cache/500-square/VqbcmM/2021/11/5/6d8d5c1a-6b6a-4d6c-9d4c-9e3c0b1a4b5d.jpg">
+                            <img src="https://images.tokopedia.net/img/cache/500-square/VqbcmM/2021/11/5/8a9a8c1a-7b7a-5d6c-9e4c-9f3c0b1a4b5e.jpg" alt="Kahf Facial Wash - Dalam Kemasan" class="thumbnail" data-image="https://images.tokopedia.net/img/cache/500-square/VqbcmM/2021/11/5/8a9a8c1a-7b7a-5d6c-9e4c-9f3c0b1a4b5e.jpg">
+                        </div>
+                    </div>
                 </div>
                 <div class="product-details">
                     <h3>Kahf Oil & Acne Care Face Wash 100ml</h3>
@@ -836,6 +939,21 @@
     </footer>
 
     <script>
+        // Galeri Foto Produk
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.getElementById('mainImage');
+        
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                // Update gambar utama
+                mainImage.src = this.getAttribute('data-image');
+                
+                // Update status aktif thumbnail
+                thumbnails.forEach(thumb => thumb.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
         // FAQ Toggle
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
